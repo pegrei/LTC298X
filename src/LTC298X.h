@@ -13,6 +13,8 @@
 #ifndef LTC298X_H
 #define LTC298X_H
 
+#include "SPI.h"
+
 /* -------------------------------------------------------------------------- */
 /*                                Sensor Types                                */
 /* -------------------------------------------------------------------------- */
@@ -319,6 +321,8 @@ class LTC298X {
         void spi_transfer_block(uint8_t *tx, uint8_t *rx, uint8_t length);
 
 	public:
+        uint32_t spi_speed = 1000000; /// Clock frequency for SPI bus.
+
 		LTC298X(uint8_t cs, uint8_t interrupt);
         void begin(void);
 

@@ -11,7 +11,6 @@
  * https://opensource.org/licenses/MIT.
  */
 #include "LTC298X.h"
-#include <SPI.h>
 
 /* -------------------------------------------------------------------------- */
 /*                                   PRIVATE                                  */
@@ -39,8 +38,6 @@ void LTC298X::spi_transfer_block(uint8_t *tx, uint8_t *rx, uint8_t length)
 /* -------------------------------------------------------------------------- */
 /*                                   PUBLIC                                   */
 /* -------------------------------------------------------------------------- */
-uint32_t LTC298X::spi_speed = 1000000; /// Clock frequency for SPI bus.
-
 uint32_t LTC298X::transfer_four_bytes(uint8_t ram_read_or_write, uint16_t start_address, uint32_t input_data)
 {
     uint32_t output_data;
